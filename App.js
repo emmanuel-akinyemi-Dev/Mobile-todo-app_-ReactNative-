@@ -32,7 +32,7 @@ export default function App() {
  
  //}
  const submitHandler =(imput)=>{
-  if (imput.length > 3)
+  if (imput.length >= 3)
   setTodos((prevTodos)=>{
     return [
       {text:imput, key:(Math.random()+0.2).toString()},
