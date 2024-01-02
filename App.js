@@ -32,12 +32,18 @@ export default function App() {
  
  //}
  const submitHandler =(imput)=>{
+  if (imput.length > 3)
   setTodos((prevTodos)=>{
     return [
       {text:imput, key:(Math.random()+0.2).toString()},
       ...prevTodos
     ]
   })
+  else{
+    alert("Oops.., \n 'Enter at least 3 characters'", [
+      {text:'Ok', onPress:()=>{console.log('alert closed')}}
+    ] )
+  }
  }
 
   return (
