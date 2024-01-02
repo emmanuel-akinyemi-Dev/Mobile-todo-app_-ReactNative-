@@ -19,11 +19,9 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderStyle:"dashed", 
         borderRadius:10,
+        fontSize:20,
     },
 
-    text:{
-
-    }
     
 
 })
