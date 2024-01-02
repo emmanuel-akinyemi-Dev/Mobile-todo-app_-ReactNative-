@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FlatList,  StyleSheet, Text, TextInput, View } from 'react-native';
+import { FlatList,  StyleSheet, Text, Alert, TextInput, View } from 'react-native';
 import Header from './components/Header'
 import RemoveBtn from './components/RemoveBtn';
 import TodoItem from './components/todoitem';
@@ -9,9 +9,7 @@ import AddTodo from './components/addtodos'
 
 export default function App() {
  const [todos, setTodos]=useState([
-  {text:'buy coffe', key:'3'},
-  {text:'create an app', key:'2'},
-  {text:'play the guitar', key:'1'},
+
  ]);
 
 
@@ -29,8 +27,8 @@ export default function App() {
 //   else{
 //     return key = 1
 //   }
- 
- //}
+//}
+
  const submitHandler =(imput)=>{
   if (imput.length >= 3)
   setTodos((prevTodos)=>{
@@ -40,9 +38,9 @@ export default function App() {
     ]
   })
   else{
-    alert("Oops.., \n 'Enter at least 3 characters'", [
-      {text:'Ok', onPress:()=>{console.log('alert closed')}}
-    ] )
+    Alert.alert('Oops..','Enter at least 3 characters', [
+      {text:'Ok', onPress:()=>{console.log('alert closed')}, style:'cancel'}
+    ])
   }
  }
 
@@ -61,12 +59,10 @@ export default function App() {
             <RemoveBtn prop={item} pressHandler={pressHandler}/>
            </View>
           )}
-           />
-          
+           /> 
         </View>
       </View>
    </View>
-
   );
 }
 
